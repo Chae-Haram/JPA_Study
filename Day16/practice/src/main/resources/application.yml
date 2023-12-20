@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/practice
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: create
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+        use_sql_comments: true  # 기본 인스턴스를 static import와 함께 사용
+
+server:
+  servlet:
+    context-path: /
+
+logging.level:
+  org.hibernate.SQL: debug
+# org.hibernate.type: trace
