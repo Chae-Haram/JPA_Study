@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+#      ddl-auto: none
+    properties:
+      hibernate:
+  #     show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 1000
+  #     개별로 설정하려면 @BatchSize 를 적용하면 된다. (컬렉션은 컬렉션 필드에, 엔티티는 엔티티 클래스에 적용)
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+logging.level:
+  org.hibernate.SQL: debug
